@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .i {
+            width: 10%;
+            height: 10%;
+        }
+    </style>
+    <title>Web Camera</title>
+</head>
+<body>
+    <div class="i"><video id="vid" autoplay></video></div>
+    
+    <script>
+        navigator.mediaDevices.getUserMedia({
+            video:{
+                width1:11000,
+                height:1000
+            }
+        })
+        .then(stream=>{
+            document.getElementById("vid").srcObject=stream;
+        })
+    </script>
+</body>
+</html>
